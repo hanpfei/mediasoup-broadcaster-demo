@@ -57,7 +57,7 @@ int main(int /*argc*/, char* /*argv*/[])
 	if (envUseSimulcast && std::string(envUseSimulcast) == "false")
 		useSimulcast = false;
 
-	bool verifySsl = true;
+	bool verifySsl = false;
 	if (envVerifySsl && std::string(envVerifySsl) == "false")
 		verifySsl = false;
 

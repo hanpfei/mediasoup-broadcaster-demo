@@ -45,12 +45,12 @@ IvfVideoFrameGenerator::IvfVideoFrameGenerator(const std::string& file_name)
   // Set buffer pool size to max value to ensure that if users of generator,
   // ex. test frameworks, will retain frames for quite a long time, decoder
   // won't crash with buffers pool overflow error.
-  codec_settings.buffer_pool_size = std::numeric_limits<int>::max();
-  RTC_CHECK_EQ(video_decoder_->RegisterDecodeCompleteCallback(&callback_),
-               WEBRTC_VIDEO_CODEC_OK);
-  RTC_CHECK_EQ(
-      video_decoder_->InitDecode(&codec_settings, /*number_of_cores=*/1),
-      WEBRTC_VIDEO_CODEC_OK);
+//  codec_settings.buffer_pool_size = std::numeric_limits<int>::max();
+//  RTC_CHECK_EQ(video_decoder_->RegisterDecodeCompleteCallback(&callback_),
+//               WEBRTC_VIDEO_CODEC_OK);
+//  RTC_CHECK_EQ(
+//      video_decoder_->InitDecode(&codec_settings, /*number_of_cores=*/1),
+//      WEBRTC_VIDEO_CODEC_OK);
 }
 IvfVideoFrameGenerator::~IvfVideoFrameGenerator() {
   MutexLock lock(&lock_);
