@@ -21,6 +21,8 @@ message("")
 set_source_files_properties(${SOURCE_FILES}
 	PROPERTIES COMPILE_FLAGS -Wall -Wextra -Wpedantic)
 
+add_compile_options(-fno-rtti)
+
 # Create target.
 add_executable(${PROJECT_NAME} ${SOURCES})
 
@@ -92,5 +94,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	webrtc_broadcaster
 	X11
 	glib-2.0
+	atomic
 )
 
